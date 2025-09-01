@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: Inter, Inter var, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: Inter, Inter var, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --fs-h1: 72px; --fs-h2: 44px; --fs-h3: 28px; --fs-body-lg: 18px; --fs-body: 16px; --fs-small: 14px;
+  --lh-h: 1.1; --lh-body: 1.7;
+  --r-sm: 10px; --r-md: 14px; --r-lg: 18px; --r-xl: 26px;
+  --sp-xs: 8px; --sp-sm: 12px; --sp-md: 16px; --sp-lg: 24px; --sp-xl: 32px; --sp-xxl: 56px;
+
+  /* Brand blues */
+  --brand-50: 240 246 255; --brand-100: 223 236 255; --brand-200: 189 215 255; --brand-300: 144 187 255;
+  --brand-400: 95 156 255; --brand-500: 31 107 255; --brand-600: 21 88 218; --brand-700: 17 72 179; --brand-800: 13 53 131; --brand-900: 10 40 98;
+
+  /* Neutrals */
+  --text: 16 24 40; --mutedText: 100 112 125; --bg: 247 250 255; --elevated: 255 255 255; --border: 226 232 240;
+}
+.dark { --text: 229 231 235; --mutedText: 156 163 175; --bg: 17 24 39; --elevated: 23 31 49; --border: 45 55 72; }
+
+html { scroll-behavior: smooth; }
+body { @apply font-body bg-[rgb(var(--bg))] text-[rgb(var(--text))]; }
+
+.skip-link { position: absolute; left: -999px; top: -999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: white; padding: .5rem 1rem; border-radius: .5rem; }
+
+h1 { font-family: var(--font-display); font-size: var(--fs-h1); line-height: var(--lh-h); letter-spacing: -0.02em; }
+h2 { font-family: var(--font-display); font-size: var(--fs-h2); line-height: var(--lh-h); letter-spacing: -0.01em; }
+h3 { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.3; }
+p, li { font-size: var(--fs-body); line-height: var(--lh-body); }
+
+.card { @apply bg-[rgb(var(--elevated))] rounded-[var(--r-xl)] shadow-sm border border-[rgb(var(--border))]; }
+
+/* Utilities matching the reference */
+.gradient-cta { background: linear-gradient(135deg, rgb(var(--brand-500)) 0%, rgb(var(--brand-600)) 100%); }
+.gradient-text { background: linear-gradient(90deg, #3ba5ff 0%, #77e0c1 50%, #f2d787 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pill { @apply rounded-full px-4 py-2 border border-[rgb(var(--border))] bg-white/70 backdrop-blur; }
+.icon-badge { @apply w-12 h-12 flex items-center justify-center rounded-2xl shadow-sm; }
+.section { @apply mx-auto max-w-6xl px-4 py-20; }
